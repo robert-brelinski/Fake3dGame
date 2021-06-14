@@ -2,13 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MyScript : MonoBehaviour
+public class MyScript2 : MonoBehaviour
 {
     public Color color;
-    public Renderer renderer;
     void Start()
     {
-        renderer.material.color = Color.blue;
+        
     }
 
     void Update()
@@ -18,6 +17,8 @@ public class MyScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        renderer.material.color = color;
+        Renderer rend = GetComponent<Renderer>();
+        Material material = rend.material;
+        material.color = color;
     }
 }
